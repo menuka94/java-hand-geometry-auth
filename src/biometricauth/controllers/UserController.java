@@ -1,7 +1,5 @@
 package biometricauth.controllers;
 
-
-
 import biometricauth.db.MySQLConnection;
 import biometricauth.models.User;
 import java.sql.Connection;
@@ -36,7 +34,7 @@ public class UserController {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(query);
             while(rs.next()){
-                int uid = rs.getInt("uid");
+                int uid = rs.getInt("id");
                 String username = rs.getString("username");
                 String password = rs.getString("password");
 
