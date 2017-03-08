@@ -48,6 +48,7 @@ public class SignUp extends javax.swing.JFrame {
         txtPinkyHeight = new javax.swing.JTextField();
         txtPalmAcrossLength = new javax.swing.JTextField();
         txtPalmHeight = new javax.swing.JTextField();
+        btnClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,6 +85,8 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
+        btnClear.setText("Clear");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -115,7 +118,9 @@ public class SignUp extends javax.swing.JFrame {
                             .addComponent(txtPalmHeight)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(156, 156, 156)
-                        .addComponent(btnSignUp)))
+                        .addComponent(btnSignUp)
+                        .addGap(47, 47, 47)
+                        .addComponent(btnClear)))
                 .addContainerGap(176, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -158,7 +163,9 @@ public class SignUp extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(txtPalmHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(btnSignUp)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSignUp)
+                    .addComponent(btnClear))
                 .addContainerGap())
         );
 
@@ -227,6 +234,7 @@ public class SignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClear;
     private javax.swing.JButton btnSignUp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

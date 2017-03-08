@@ -88,6 +88,8 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
                           <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="btnClear" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="176" max="32767" attributes="0"/>
@@ -143,7 +145,10 @@
                       <Component id="txtPalmHeight" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="39" max="32767" attributes="0"/>
-                  <Component id="btnSignUp" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnSignUp" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnClear" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -223,6 +228,11 @@
         <Component class="javax.swing.JTextField" name="txtPalmAcrossLength">
         </Component>
         <Component class="javax.swing.JTextField" name="txtPalmHeight">
+        </Component>
+        <Component class="javax.swing.JButton" name="btnClear">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Clear"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
