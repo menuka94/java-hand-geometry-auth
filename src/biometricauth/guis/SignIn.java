@@ -263,7 +263,7 @@ public class SignIn extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSignInActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
+        clear();
     }//GEN-LAST:event_btnClearActionPerformed
 
     /**
@@ -300,6 +300,16 @@ public class SignIn extends javax.swing.JFrame {
                 new SignIn().setVisible(true);
             }
         });
+    }
+    
+    private void clear(){
+        txtUsername.setText("");
+        txtPassword.setText("");
+        txtIndexFingerHeight.setText("");
+        txtMiddleFingerHeight.setText("");
+        txtRingFingerheight.setText("");
+        txtPalmAcrossHeight.setText("");
+        txtPalmHeight.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

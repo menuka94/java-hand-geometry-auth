@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/guis/SignUp.java</file>
+            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/models/User.java</file>
+            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/models/HandGeometry.java</file>
+            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/db/Constants.java</file>
+            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/guis/Dashboard.java</file>
+            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/db/MySQLConnection.java</file>
+            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/guis/SignIn.java</file>
+            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/controllers/UserController.java</file>
+            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/Main.java</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,9 +1,5 @@
 package biometricauth.models;
 
-/**
- *
- * @author Max
- */
 public class User {
     private String UID;
     private String username;
@@ -22,6 +18,7 @@ public class User {
                 "UID='" + UID + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", HandGeometry= {"+ handGeometry+"}" + 
                 '}';
     }
 

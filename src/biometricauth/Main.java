@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class Main {
 
    public static void main(String[] args) {
-        UserController.addUser("selena", "hero");
         ArrayList<User> users = UserController.getAllUsers();
         for(User user: users){
             System.out.println(user);
