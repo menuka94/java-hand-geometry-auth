@@ -7,8 +7,8 @@
 2. Middle Finger Height
 3. Ring Finger Height
 4. Pinky Height
-5. Palm Across-Length
-6. Palm Height
+5. Palm Across-Length (From the base of the Thumb to the base of the Pinky)
+6. Palm Height (From the base of the Thumb to the base of the Index Finger)
 
 ## Authentication Mechanism
 #### Measurements are taken as text inputs through the GUI
