@@ -71,7 +71,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="txtPalmHeight" min="-2" pref="191" max="-2" attributes="0"/>
                               <Component id="txtPalmAcrossLength" min="-2" pref="191" max="-2" attributes="0"/>
-                              <Component id="txtRingFingerheight" min="-2" pref="191" max="-2" attributes="0"/>
+                              <Component id="txtRingFingerHeight" min="-2" pref="191" max="-2" attributes="0"/>
                               <Component id="txtMiddleFingerHeight" min="-2" pref="191" max="-2" attributes="0"/>
                               <Component id="txtIndexFingerHeight" min="-2" pref="191" max="-2" attributes="0"/>
                               <Component id="txtUsername" min="-2" pref="191" max="-2" attributes="0"/>
@@ -117,7 +117,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtRingFingerheight" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtRingFingerHeight" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -205,9 +205,9 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMiddleFingerHeightActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtRingFingerheight">
+        <Component class="javax.swing.JTextField" name="txtRingFingerHeight">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRingFingerheightActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRingFingerHeightActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="txtPalmAcrossLength">

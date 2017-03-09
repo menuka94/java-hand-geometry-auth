@@ -18,7 +18,7 @@ public class User {
                 "UID='" + UID + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", HandGeometry= {"+ handGeometry+"}" + 
+                ", HandGeometry= {"+ handGeometry +"}" + 
                 '}';
     }
 

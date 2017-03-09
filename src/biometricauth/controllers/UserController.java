@@ -52,6 +52,24 @@ public class UserController {
 
     }
     
+    public static String getPasswordOfUser(String username){
+        String query = "select password from users where username = ?";
+        String password = null;
+        try {
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+                password = rs.getString("password");
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+        return password;
+    }
+    
     public static ArrayList<String> getAllUsernames(){
         ArrayList<String> usernames = new ArrayList<>();
         String query = "select username from users";
@@ -102,7 +120,7 @@ public class UserController {
                 String middleFingerHeight = rs.getString("middle_finger_height");
                 String ringFingerHeight = rs.getString("ring_finger_height");
                 String pinkyHeight = rs.getString("pinky_height");
-                String palmAcrossLength = rs.getString("palm_across_lenght");
+                String palmAcrossLength = rs.getString("palm_across_length");
                 String palmHeight = rs.getString("palm_height");
                 
                 HandGeometry hg = new HandGeometry();
@@ -116,7 +134,6 @@ public class UserController {
                 if(user != null){
                     user.setHandGeometry(hg);
                 }
-                
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -5,11 +5,10 @@
  */
 package biometricauth.guis;
 
+import biometricauth.controllers.AuthController;
 import biometricauth.controllers.UserController;
 import biometricauth.models.HandGeometry;
-import biometricauth.models.User;
 import com.mysql.jdbc.StringUtils;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -212,7 +211,7 @@ public class SignUp extends javax.swing.JFrame {
         String palmAcrossLength = txtPalmAcrossLength.getText().trim();
         String palmHeight = txtPalmHeight.getText().trim();
         
-        // validation
+        // Input validation
         if(StringUtils.isEmptyOrWhitespaceOnly(username) ||
                 StringUtils.isEmptyOrWhitespaceOnly(password) ||
                 StringUtils.isEmptyOrWhitespaceOnly(confirmPassword) ||
@@ -235,19 +234,10 @@ public class SignUp extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Password and Confirm Password does not match!");
             return;
         }
+    
         
-        // [START] Check if the entered username already exists
-        ArrayList<String> usernames = UserController.getAllUsernames();
-        boolean uniqueUsername = true;
-        for(String current_username: usernames){
-            if(current_username.equals(username)){
-                uniqueUsername = false;
-            }
-        }
-        // [END] Check if the entered username already exists
-        
-        if(!uniqueUsername){
-            JOptionPane.showMessageDialog(this, "Username already exits! Please change it");
+        if(AuthController.usernameExists(username)){
+            JOptionPane.showMessageDialog(this, "Username already exits! Change it to something else");
             return;
         }
        

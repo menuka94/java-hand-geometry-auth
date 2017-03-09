@@ -18,15 +18,12 @@ public class Main {
 
    public static void main(String[] args) {
         ArrayList<User> users = UserController.getAllUsers();
+        System.out.println("# of users = " + users.size());
         for(User user: users){
             System.out.println(user);
         }
         
-        ArrayList<String> usernames = UserController.getAllUsernames();
-        for(String username: usernames){
-            System.out.println(username);
-        }
-        
+
         StartForm sf = new StartForm();
         sf.setVisible(true);
     }

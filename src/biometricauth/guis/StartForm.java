@@ -5,6 +5,9 @@
  */
 package biometricauth.guis;
 
+import biometricauth.controllers.UserController;
+import biometricauth.models.User;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -18,6 +21,9 @@ public class StartForm extends javax.swing.JFrame {
      */
     public StartForm() {
         initComponents();
+        ArrayList<String> usernames = UserController.getAllUsernames();
+        String[] usernamesArray = usernames.toArray(new String[0]);
+        listRegisteredUsers.setListData(usernamesArray);
     }
 
     /**
@@ -32,6 +38,9 @@ public class StartForm extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         btnSignIn = new javax.swing.JButton();
         btnSignUp = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listRegisteredUsers = new javax.swing.JList();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biometric Authentcation System - 140650E");
@@ -50,25 +59,40 @@ public class StartForm extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane1.setViewportView(listRegisteredUsers);
+
+        jLabel1.setText("Registered Users (usernames):");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(btnSignIn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addComponent(btnSignUp)
-                .addGap(72, 72, 72))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnSignIn)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSignUp))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(114, 114, 114)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSignIn)
                     .addComponent(btnSignUp))
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -142,6 +166,9 @@ public class StartForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSignIn;
     private javax.swing.JButton btnSignUp;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList listRegisteredUsers;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,10 @@
  */
 package biometricauth.guis;
 
+import biometricauth.controllers.AuthController;
+import com.mysql.jdbc.StringUtils;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Max
@@ -40,7 +44,7 @@ public class SignIn extends javax.swing.JFrame {
         txtIndexFingerHeight = new javax.swing.JTextField();
         txtPassword = new javax.swing.JTextField();
         txtMiddleFingerHeight = new javax.swing.JTextField();
-        txtRingFingerheight = new javax.swing.JTextField();
+        txtRingFingerHeight = new javax.swing.JTextField();
         txtPalmAcrossLength = new javax.swing.JTextField();
         txtPalmHeight = new javax.swing.JTextField();
         txtPinkyHeight = new javax.swing.JTextField();
@@ -91,9 +95,9 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
 
-        txtRingFingerheight.addActionListener(new java.awt.event.ActionListener() {
+        txtRingFingerHeight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtRingFingerheightActionPerformed(evt);
+                txtRingFingerHeightActionPerformed(evt);
             }
         });
 
@@ -150,7 +154,7 @@ public class SignIn extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtPalmHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtPalmAcrossLength, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRingFingerheight, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRingFingerHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtMiddleFingerHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtIndexFingerHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -186,7 +190,7 @@ public class SignIn extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(txtRingFingerheight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtRingFingerHeight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -242,9 +246,9 @@ public class SignIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMiddleFingerHeightActionPerformed
 
-    private void txtRingFingerheightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRingFingerheightActionPerformed
+    private void txtRingFingerHeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRingFingerHeightActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtRingFingerheightActionPerformed
+    }//GEN-LAST:event_txtRingFingerHeightActionPerformed
 
     private void txtPalmAcrossLengthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPalmAcrossLengthActionPerformed
         // TODO add your handling code here:
@@ -259,7 +263,47 @@ public class SignIn extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPinkyHeightActionPerformed
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
-        // TODO add your handling code here:
+        String username = txtUsername.getText().trim();
+        String password = txtPassword.getText().trim();
+
+        String indexFingerHeight = txtIndexFingerHeight.getText().trim();
+        String middleFingerHeight = txtMiddleFingerHeight.getText().trim();
+        String ringFingerHeight = txtRingFingerHeight.getText().trim();
+        String pinkyHeight = txtPinkyHeight.getText().trim();
+        String palmAcrossLength = txtPalmAcrossLength.getText().trim();
+        String palmHeight = txtPalmHeight.getText().trim();
+
+        // Input Validation
+        if (StringUtils.isEmptyOrWhitespaceOnly(username)
+                || StringUtils.isEmptyOrWhitespaceOnly(password)
+                || StringUtils.isEmptyOrWhitespaceOnly(indexFingerHeight)
+                || StringUtils.isEmptyOrWhitespaceOnly(middleFingerHeight)
+                || StringUtils.isEmptyOrWhitespaceOnly(ringFingerHeight)
+                || StringUtils.isEmptyOrWhitespaceOnly(pinkyHeight)
+                || StringUtils.isEmptyOrWhitespaceOnly(palmAcrossLength)
+                || StringUtils.isEmptyOrWhitespaceOnly(palmHeight)) {
+            JOptionPane.showMessageDialog(this, "Fill in all the fields");
+            return;
+        }
+
+        if (password.length() < 4) {
+            JOptionPane.showMessageDialog(this, "Password should contain at least 4 characters");
+            return;
+        }
+
+        if (AuthController.usernameExists(username)) {
+            if (AuthController.matchUsernamePassword(username, password)) {
+                this.dispose();
+                Dashboard d = new Dashboard();
+                d.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Username and Password does not match");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Username not recognized");
+        }
+
+        return;
     }//GEN-LAST:event_btnSignInActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
@@ -301,13 +345,13 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
     }
-    
-    private void clear(){
+
+    private void clear() {
         txtUsername.setText("");
         txtPassword.setText("");
         txtIndexFingerHeight.setText("");
         txtMiddleFingerHeight.setText("");
-        txtRingFingerheight.setText("");
+        txtRingFingerHeight.setText("");
         txtPalmAcrossLength.setText("");
         txtPalmHeight.setText("");
     }
@@ -330,7 +374,7 @@ public class SignIn extends javax.swing.JFrame {
     private javax.swing.JTextField txtPalmHeight;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtPinkyHeight;
-    private javax.swing.JTextField txtRingFingerheight;
+    private javax.swing.JTextField txtRingFingerHeight;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 }
