@@ -6,8 +6,10 @@
 package biometricauth;
 
 import biometricauth.controllers.UserController;
+import biometricauth.guis.StartForm;
 import biometricauth.models.User;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 
 /**
  *
@@ -20,9 +22,10 @@ public class Main {
         for(User user: users){
             System.out.println(user);
         }
-
-//        UserSignUpForm signUpForm = new UserSignUpForm();
-//        signUpForm.setVisible(true);
+        
+        StartForm sf = new StartForm();
+        sf.setVisible(true);
+//        sf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
 }
