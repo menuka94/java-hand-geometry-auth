@@ -18,18 +18,12 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(UserController.getLastInsertId());
-
-        ArrayList<User> users = UserController.getAllUsers();
-        System.out.println("# of users = " + users.size());
-        for (User user : users) {
-            System.out.println(user);
-        }
+        HandGeometry hg = UserController.getHandGeometryOfUser("harry");
+        System.out.println(hg);
 
         StartForm sf = new StartForm();
         sf.setVisible(true);
-
-        HandGeometry hg = UserController.getHandGeometryOfUser("harry");
+        
         System.out.println(hg);
     }
 

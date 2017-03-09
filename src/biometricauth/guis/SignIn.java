@@ -6,6 +6,8 @@
 package biometricauth.guis;
 
 import biometricauth.controllers.AuthController;
+import biometricauth.controllers.UserController;
+import biometricauth.models.HandGeometry;
 import com.mysql.jdbc.StringUtils;
 import javax.swing.JOptionPane;
 
@@ -263,6 +265,7 @@ public class SignIn extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPinkyHeightActionPerformed
 
     private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
+        boolean authenticated = true;
         String username = txtUsername.getText().trim();
         String password = txtPassword.getText().trim();
 
@@ -288,23 +291,44 @@ public class SignIn extends javax.swing.JFrame {
 
         if (password.length() < 4) {
             JOptionPane.showMessageDialog(this, "Password should contain at least 4 characters");
+            authenticated = false;
             return;
         }
 
+        // Check if the user is registered
         if (AuthController.usernameExists(username)) {
-            if (AuthController.matchUsernamePassword(username, password)) {
-                this.dispose();
-                Dashboard d = new Dashboard();
-                d.setVisible(true);
-            } else {
+            if (!AuthController.matchUsernamePassword(username, password)){
                 JOptionPane.showMessageDialog(this, "Username and Password does not match");
+                authenticated = false;
+                return;
             }
+            
+            // username and password matches at this point
         } else {
             JOptionPane.showMessageDialog(this, "Username not recognized");
+            return;
         }
 
-        return;
+        // check HandGeometry deviation, now that the username and password match is complete
+        HandGeometry entered = new HandGeometry(indexFingerHeight, middleFingerHeight, ringFingerHeight, pinkyHeight, palmAcrossLength, palmHeight);
+        HandGeometry stored = UserController.getHandGeometryOfUser(username);
+        double deviation = AuthController.getHandGeometryMatchScore(entered, stored);
+
+        if (deviation > 10) {
+            // Deviation too high to authenticate
+            authenticated = false;
+        }
+
+        if (authenticated) {
+            this.dispose();
+            Dashboard d = new Dashboard();
+            d.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Hand Geometry Authentication Failed");
+        }
+
     }//GEN-LAST:event_btnSignInActionPerformed
+    // end of btnSignInActionPerformed()
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         clear();

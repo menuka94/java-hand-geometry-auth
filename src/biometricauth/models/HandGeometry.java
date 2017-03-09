@@ -16,7 +16,7 @@ public class HandGeometry {
         String username;
     }
 
-    public HandGeometry(String indexFingerHeight, String middleFingerHeight, String ringFingerHeight, String pinkyHeight, String palmHeight, String palmAcrossLength) {
+    public HandGeometry(String indexFingerHeight, String middleFingerHeight, String ringFingerHeight, String pinkyHeight, String palmAcrossLength, String palmHeight) {
         this.indexFingerHeight = indexFingerHeight;
         this.middleFingerHeight = middleFingerHeight;
         this.ringFingerHeight = ringFingerHeight;
