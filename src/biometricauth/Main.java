@@ -7,6 +7,7 @@ package biometricauth;
 
 import biometricauth.controllers.UserController;
 import biometricauth.guis.StartForm;
+import biometricauth.models.HandGeometry;
 import biometricauth.models.User;
 import java.util.ArrayList;
 
@@ -16,16 +17,20 @@ import java.util.ArrayList;
  */
 public class Main {
 
-   public static void main(String[] args) {
+    public static void main(String[] args) {
+        System.out.println(UserController.getLastInsertId());
+
         ArrayList<User> users = UserController.getAllUsers();
         System.out.println("# of users = " + users.size());
-        for(User user: users){
+        for (User user : users) {
             System.out.println(user);
         }
-        
 
         StartForm sf = new StartForm();
         sf.setVisible(true);
+
+        HandGeometry hg = UserController.getHandGeometryOfUser("harry");
+        System.out.println(hg);
     }
-    
+
 }

@@ -12,7 +12,11 @@ public class AuthController {
     public static void matchHandGeometry(HandGeometry hg1, HandGeometry hg2){
         int score = 0;
         
+        //
+        
     }
+    
+   
     
     public static boolean matchUsernamePassword(String username, String enteredPassword){
         String realPassword = UserController.getPasswordOfUser(username);
