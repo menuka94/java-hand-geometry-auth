@@ -68,15 +68,15 @@
                               <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtPalmHeight" min="-2" pref="191" max="-2" attributes="0"/>
-                              <Component id="txtPalmAcrossLength" min="-2" pref="191" max="-2" attributes="0"/>
-                              <Component id="txtRingFingerHeight" min="-2" pref="191" max="-2" attributes="0"/>
-                              <Component id="txtMiddleFingerHeight" min="-2" pref="191" max="-2" attributes="0"/>
-                              <Component id="txtIndexFingerHeight" min="-2" pref="191" max="-2" attributes="0"/>
-                              <Component id="txtUsername" min="-2" pref="191" max="-2" attributes="0"/>
-                              <Component id="txtPassword" min="-2" pref="191" max="-2" attributes="0"/>
-                              <Component id="txtPinkyHeight" min="-2" pref="191" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtPalmHeight" pref="191" max="32767" attributes="0"/>
+                              <Component id="txtPalmAcrossLength" pref="191" max="32767" attributes="0"/>
+                              <Component id="txtRingFingerHeight" pref="191" max="32767" attributes="0"/>
+                              <Component id="txtMiddleFingerHeight" pref="191" max="32767" attributes="0"/>
+                              <Component id="txtIndexFingerHeight" pref="191" max="32767" attributes="0"/>
+                              <Component id="txtUsername" pref="191" max="32767" attributes="0"/>
+                              <Component id="txtPinkyHeight" pref="191" max="32767" attributes="0"/>
+                              <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -195,11 +195,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIndexFingerHeightActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtPassword">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPasswordActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JTextField" name="txtMiddleFingerHeight">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMiddleFingerHeightActionPerformed"/>
@@ -240,6 +235,8 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="txtPassword">
         </Component>
       </SubComponents>
     </Container>

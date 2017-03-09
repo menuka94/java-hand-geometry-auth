@@ -46,8 +46,6 @@ public class SignUp extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         btnSignUp = new javax.swing.JButton();
         txtUsername = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
-        txtConfirmPassword = new javax.swing.JTextField();
         txtIndexFingerHeight = new javax.swing.JTextField();
         txtMiddleFingerHeight = new javax.swing.JTextField();
         txtRingFingerHeight = new javax.swing.JTextField();
@@ -55,6 +53,8 @@ public class SignUp extends javax.swing.JFrame {
         txtPalmAcrossLength = new javax.swing.JTextField();
         txtPalmHeight = new javax.swing.JTextField();
         btnClear = new javax.swing.JButton();
+        txtConfirmPassword = new javax.swing.JPasswordField();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,14 +119,14 @@ public class SignUp extends javax.swing.JFrame {
                         .addGap(74, 74, 74)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(txtPassword)
-                            .addComponent(txtConfirmPassword)
                             .addComponent(txtIndexFingerHeight)
                             .addComponent(txtMiddleFingerHeight)
                             .addComponent(txtRingFingerHeight)
                             .addComponent(txtPinkyHeight)
                             .addComponent(txtPalmAcrossLength)
-                            .addComponent(txtPalmHeight)))
+                            .addComponent(txtPalmHeight)
+                            .addComponent(txtConfirmPassword)
+                            .addComponent(txtPassword)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(156, 156, 156)
                         .addComponent(btnSignUp)
@@ -328,12 +328,12 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollBar jScrollBar1;
-    private javax.swing.JTextField txtConfirmPassword;
+    private javax.swing.JPasswordField txtConfirmPassword;
     private javax.swing.JTextField txtIndexFingerHeight;
     private javax.swing.JTextField txtMiddleFingerHeight;
     private javax.swing.JTextField txtPalmAcrossLength;
     private javax.swing.JTextField txtPalmHeight;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtPinkyHeight;
     private javax.swing.JTextField txtRingFingerHeight;
     private javax.swing.JTextField txtUsername;

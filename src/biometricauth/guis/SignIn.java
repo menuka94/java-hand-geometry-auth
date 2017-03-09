@@ -44,7 +44,6 @@ public class SignIn extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         txtUsername = new javax.swing.JTextField();
         txtIndexFingerHeight = new javax.swing.JTextField();
-        txtPassword = new javax.swing.JTextField();
         txtMiddleFingerHeight = new javax.swing.JTextField();
         txtRingFingerHeight = new javax.swing.JTextField();
         txtPalmAcrossLength = new javax.swing.JTextField();
@@ -52,6 +51,7 @@ public class SignIn extends javax.swing.JFrame {
         txtPinkyHeight = new javax.swing.JTextField();
         btnSignIn = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
+        txtPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -82,12 +82,6 @@ public class SignIn extends javax.swing.JFrame {
         txtIndexFingerHeight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIndexFingerHeightActionPerformed(evt);
-            }
-        });
-
-        txtPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPasswordActionPerformed(evt);
             }
         });
 
@@ -153,15 +147,15 @@ public class SignIn extends javax.swing.JFrame {
                             .addComponent(jLabel8)
                             .addComponent(jLabel9))
                         .addGap(74, 74, 74)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPalmHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPalmAcrossLength, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRingFingerHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtMiddleFingerHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtIndexFingerHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPinkyHeight, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtPalmHeight, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(txtPalmAcrossLength, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(txtRingFingerHeight, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(txtMiddleFingerHeight, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(txtIndexFingerHeight, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(txtPinkyHeight, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
+                            .addComponent(txtPassword))))
                 .addContainerGap(147, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -235,14 +229,6 @@ public class SignIn extends javax.swing.JFrame {
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
-
-    private void txtIndexFingerHeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIndexFingerHeightActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIndexFingerHeightActionPerformed
-
-    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void txtMiddleFingerHeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMiddleFingerHeightActionPerformed
         // TODO add your handling code here:
@@ -334,6 +320,10 @@ public class SignIn extends javax.swing.JFrame {
         clear();
     }//GEN-LAST:event_btnClearActionPerformed
 
+    private void txtIndexFingerHeightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIndexFingerHeightActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIndexFingerHeightActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -396,7 +386,7 @@ public class SignIn extends javax.swing.JFrame {
     private javax.swing.JTextField txtMiddleFingerHeight;
     private javax.swing.JTextField txtPalmAcrossLength;
     private javax.swing.JTextField txtPalmHeight;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtPinkyHeight;
     private javax.swing.JTextField txtRingFingerHeight;
     private javax.swing.JTextField txtUsername;

@@ -75,14 +75,14 @@
                           <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="txtUsername" alignment="0" pref="230" max="32767" attributes="0"/>
-                              <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtConfirmPassword" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtIndexFingerHeight" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtMiddleFingerHeight" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtRingFingerHeight" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtPinkyHeight" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtPalmAcrossLength" alignment="0" max="32767" attributes="0"/>
                               <Component id="txtPalmHeight" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtConfirmPassword" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtPassword" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
@@ -213,10 +213,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUsernameActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtPassword">
-        </Component>
-        <Component class="javax.swing.JTextField" name="txtConfirmPassword">
-        </Component>
         <Component class="javax.swing.JTextField" name="txtIndexFingerHeight">
         </Component>
         <Component class="javax.swing.JTextField" name="txtMiddleFingerHeight">
@@ -236,6 +232,10 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClearActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="txtConfirmPassword">
+        </Component>
+        <Component class="javax.swing.JPasswordField" name="txtPassword">
         </Component>
       </SubComponents>
     </Container>
