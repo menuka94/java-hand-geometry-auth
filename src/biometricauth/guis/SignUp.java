@@ -5,6 +5,12 @@
  */
 package biometricauth.guis;
 
+import biometricauth.controllers.UserController;
+import biometricauth.models.HandGeometry;
+import biometricauth.models.User;
+import com.mysql.jdbc.StringUtils;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Max
@@ -86,6 +92,11 @@ public class SignUp extends javax.swing.JFrame {
         });
 
         btnClear.setText("Clear");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -190,12 +201,59 @@ public class SignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
-        // TODO add your handling code here:
+        String username = txtUsername.getText().trim();
+        String password = txtPassword.getText().trim();
+        String confirmPassword = txtConfirmPassword.getText().trim();
+        String indexFingerHeight = txtIndexFingerHeight.getText().trim();
+        String middleFingerHeight = txtMiddleFingerHeight.getText().trim();
+        String ringFingerHeight = txtRingFingerHeight.getText().trim();
+        String pinkyHeight = txtPinkyHeight.getText().trim();
+        String palmAcrossLength = txtPalmAcrossLength.getText().trim();
+        String palmHeight = txtPalmHeight.getText().trim();
+        
+        // validation
+        if(StringUtils.isEmptyOrWhitespaceOnly(username) ||
+                StringUtils.isEmptyOrWhitespaceOnly(password) ||
+                StringUtils.isEmptyOrWhitespaceOnly(confirmPassword) ||
+                StringUtils.isEmptyOrWhitespaceOnly(indexFingerHeight) ||
+                StringUtils.isEmptyOrWhitespaceOnly(middleFingerHeight) ||
+                StringUtils.isEmptyOrWhitespaceOnly(ringFingerHeight) ||
+                StringUtils.isEmptyOrWhitespaceOnly(pinkyHeight) ||
+                StringUtils.isEmptyOrWhitespaceOnly(palmAcrossLength) ||
+                StringUtils.isEmptyOrWhitespaceOnly(palmHeight)){
+            JOptionPane.showMessageDialog(this, "Fill in all the fields");
+            return;
+        }
+        
+        if(!password.equals(confirmPassword)){
+            JOptionPane.showMessageDialog(this, "Password and Confirm Password does not match!");
+            return;
+        }
+        
+        HandGeometry hg = new HandGeometry(indexFingerHeight, middleFingerHeight, ringFingerHeight, pinkyHeight, palmAcrossLength, palmHeight);
+        UserController.addUser(username, password, hg);
+        
+       
     }//GEN-LAST:event_btnSignUpActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUsernameActionPerformed
+
+     private void clear(){
+        txtUsername.setText("");
+        txtPassword.setText("");
+        txtConfirmPassword.setText("");
+        txtIndexFingerHeight.setText("");
+        txtMiddleFingerHeight.setText("");
+        txtRingFingerHeight.setText("");
+        txtPalmAcrossLength.setText("");
+        txtPalmHeight.setText("");
+    }
+    
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        clear();
+    }//GEN-LAST:event_btnClearActionPerformed
 
     /**
      * @param args the command line arguments

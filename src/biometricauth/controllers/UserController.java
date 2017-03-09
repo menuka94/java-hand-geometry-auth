@@ -9,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class UserController {
@@ -34,8 +36,8 @@ public class UserController {
             ps2.setString(5, hg.getPalmAcrossLength());
             ps2.setString(6, hg.getPalmHeight());
             
-            ps1.executeQuery();
-            ps2.executeQuery();
+            ps1.executeUpdate();
+            ps2.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -48,6 +50,24 @@ public class UserController {
         String password = user.getPassword();
         String query = "insert into users (username, password) values ('" + username + "', '" + password + "')";
 
+    }
+    
+    public static ArrayList<String> getAllUsernames(){
+        ArrayList<String> usernames = new ArrayList<>();
+        String query = "select username from users";
+        Statement st;
+        try {
+            st = connection.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while(rs.next()){
+                String currentUsername = rs.getString("username");
+                usernames.add(currentUsername);
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        
+        return usernames;
     }
 
     public static void removeUser(int uid){

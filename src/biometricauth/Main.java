@@ -23,6 +23,11 @@ public class Main {
             System.out.println(user);
         }
         
+        ArrayList<String> usernames = UserController.getAllUsernames();
+        for(String username: usernames){
+            System.out.println(username);
+        }
+        
         StartForm sf = new StartForm();
         sf.setVisible(true);
 //        sf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
