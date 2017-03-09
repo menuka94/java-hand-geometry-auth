@@ -9,6 +9,7 @@ import biometricauth.controllers.UserController;
 import biometricauth.models.HandGeometry;
 import biometricauth.models.User;
 import com.mysql.jdbc.StringUtils;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -225,13 +226,44 @@ public class SignUp extends javax.swing.JFrame {
             return;
         }
         
+        if(password.length() < 4){
+            JOptionPane.showMessageDialog(this, "Password should contain at least 4 characters");
+            return;
+        }
+        
         if(!password.equals(confirmPassword)){
             JOptionPane.showMessageDialog(this, "Password and Confirm Password does not match!");
             return;
         }
         
-        HandGeometry hg = new HandGeometry(indexFingerHeight, middleFingerHeight, ringFingerHeight, pinkyHeight, palmAcrossLength, palmHeight);
-        UserController.addUser(username, password, hg);
+        // [START] Check if the entered username already exists
+        ArrayList<String> usernames = UserController.getAllUsernames();
+        boolean uniqueUsername = true;
+        for(String current_username: usernames){
+            if(current_username.equals(username)){
+                uniqueUsername = false;
+            }
+        }
+        // [END] Check if the entered username already exists
+        
+        if(!uniqueUsername){
+            JOptionPane.showMessageDialog(this, "Username already exits! Please change it");
+            return;
+        }
+       
+        
+        try {
+            HandGeometry hg = new HandGeometry(indexFingerHeight, middleFingerHeight, ringFingerHeight, pinkyHeight, palmAcrossLength, palmHeight);
+            UserController.addUser(username, password, hg);
+            JOptionPane.showMessageDialog(this, "Signed Up Successfully!");
+            clear();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Failed to sign up");
+            System.out.println("--- Error adding New User");
+            e.printStackTrace();
+            
+        }
+
         
        
     }//GEN-LAST:event_btnSignUpActionPerformed
@@ -247,6 +279,7 @@ public class SignUp extends javax.swing.JFrame {
         txtIndexFingerHeight.setText("");
         txtMiddleFingerHeight.setText("");
         txtRingFingerHeight.setText("");
+        txtPinkyHeight.setText("");
         txtPalmAcrossLength.setText("");
         txtPalmHeight.setText("");
     }

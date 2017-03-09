@@ -6,9 +6,7 @@
             <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/guis/SignUp.java</file>
             <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/models/User.java</file>
             <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/models/HandGeometry.java</file>
-            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/db/Constants.java</file>
-            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/guis/Dashboard.java</file>
-            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/db/MySQLConnection.java</file>
+            <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/controllers/AuthController.java</file>
             <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/guis/SignIn.java</file>
             <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/controllers/UserController.java</file>
             <file>file:/C:/Users/Max/Documents/NetBeansProjects/BiometricAuth/src/biometricauth/Main.java</file>
